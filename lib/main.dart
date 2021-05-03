@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main () => runApp(MyApp());
 
 
 class MyApp extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State <MyApp> {  
-  int i  = 0;
+class _MyAppState extends State <MyApp> {  
+  int _i  = 0;
   @override
   Widget build(BuildContext context) { 
     var questions = [
       'What\'s your favourite color?',
       'What\'s your favourite animal?',
+    ];
+    var button = [
+      '>>',
+      '<<',
     ];
     
     return MaterialApp(
@@ -26,12 +32,17 @@ class MyAppState extends State <MyApp> {
         ),
         body: Column(
           children: [
-            Text(questions[i]),
+            Question(questions[_i]),
             ElevatedButton(
-              child: Text('>>'),
+              child: Text(button[_i]),
               onPressed: () { 
                 setState(() {
-                  i++;
+                  if(_i==0){
+                    _i++;
+                  }else{
+                    _i = 0;
+                  }
+                  
                 });
               },
             ),
