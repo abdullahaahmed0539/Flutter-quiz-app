@@ -4,6 +4,7 @@ void main () => runApp(MyApp());
 
 
 class MyApp extends StatelessWidget{
+  
   @override
   Widget build(BuildContext context) { 
     var questions = [
@@ -19,8 +20,14 @@ class MyApp extends StatelessWidget{
         body: Column(
           children: [
             Text('The question'),
-            ElevatedButton(child: Text('Answer 1'), onPressed: null,),
-            ElevatedButton(child: Text('Answer 2'), onPressed: null,),
+            ElevatedButton(
+              child: Text('Answer 1'),
+              onPressed: () => print('Answer 1'),
+            ),
+            ElevatedButton(
+              child: Text('Answer 2'), 
+              onPressed: () => print('Answer 2'),
+            ),
           ]
         ),
       ),
