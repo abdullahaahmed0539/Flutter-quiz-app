@@ -57,7 +57,13 @@ class _MyAppState extends State <MyApp> {
     setState(() {
       _i++;
     });
-    
+  }
+
+  void reset(){
+    _total = 0;
+    setState(() {
+      _i = 0;
+    });
   }
 
   Widget build(BuildContext context) { 
@@ -74,7 +80,7 @@ class _MyAppState extends State <MyApp> {
           children: [
               Quiz(_questions, optionPress, _i)
           ]
-        ): Result(_total),
+        ): Result(_total, reset),
       ),
     );
   }
