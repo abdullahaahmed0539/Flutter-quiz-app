@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-  final String question;
-  Question(this.question);
+  final String _question;
+  Question(this._question);
   
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Text(
-        question,
+        _question,
         style: TextStyle(
           fontSize: 24,
         ),

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   
-  final int score;
+  final int _score;
 
-  Result(this.score);
+  Result(this._score);
 
-  String get score_card{
-    String display = 'Your Score is ${score}/40';
+  String get _scoreCard{
+    String display = 'Your Score is $_score/40';
     return display;
   }
   
@@ -15,7 +15,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        score_card,
+        _scoreCard,
         style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
         textAlign: TextAlign.center,
         

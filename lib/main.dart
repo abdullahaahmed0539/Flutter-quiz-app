@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/question.dart';
 
 import './quiz.dart';
 import './result.dart';
@@ -15,10 +14,10 @@ class MyApp extends StatefulWidget{
 }
 
 class _MyAppState extends State <MyApp> {  
-  int i  = 0;
-  int total = 0;
+  int _i  = 0;
+  int _total = 0;
   
-  final questions = [
+  final _questions = [
       {'question':'When was Pakistan founded?',
       'answer': [
         {'option':'1945', 'score': 0},
@@ -53,11 +52,10 @@ class _MyAppState extends State <MyApp> {
       },
     ];
  
-  @override
-  void Press(int score){
-    total += score;
+  void optionPress(int score){
+    _total += score;
     setState(() {
-      i++;
+      _i++;
     });
     
   }
@@ -72,11 +70,11 @@ class _MyAppState extends State <MyApp> {
           title: Text('Quiz',),
           
         ),
-        body: i < questions.length? Column(
+        body: _i < _questions.length? Column(
           children: [
-              Quiz(questions, Press, i)
+              Quiz(_questions, optionPress, _i)
           ]
-        ): Result(total),
+        ): Result(_total),
       ),
     );
   }
