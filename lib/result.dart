@@ -22,7 +22,7 @@ class Result extends StatelessWidget {
         style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
         textAlign: TextAlign.center, 
       ),
-      FlatButton(onPressed: reset, child: Text('Reset'),textColor: Colors.blue,)]
+      OutlinedButton(onPressed: reset, child: Text('Reset'), style: OutlinedButton.styleFrom(primary: Colors.purple, side: BorderSide(color: Colors.purple)),)]
       )
     );
   }
